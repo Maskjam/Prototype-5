@@ -11,7 +11,7 @@ public class Target : MonoBehaviour
     private float xRange = 4;
     private float ySpawnPos = -6;
     private GameManager gameManager;
-    public int pointValue;
+    public int pointValue = 1;
     public ParticleSystem explosionParticle;
     // Start is called before the first frame update
     void Start()
