@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI gameOverText;
@@ -43,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverText.gameObject.SetActive(true);
         isGameActive = false;
+        restartButton.gameObject.SetActive(true);
     }
 
 

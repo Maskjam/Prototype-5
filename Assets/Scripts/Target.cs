@@ -13,8 +13,11 @@ public class Target : MonoBehaviour
     private GameManager gameManager;
     public int pointValue = 1;
     public ParticleSystem explosionParticle;
-    // Start is called before the first frame update
-    void Start()
+    
+    
+    
+    
+    void Awake()
     {
         targetRb = GetComponent<Rigidbody>();
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
