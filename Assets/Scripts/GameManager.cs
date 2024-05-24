@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
      public GameObject titleScreen;
      public int Health; 
      public TextMeshProUGUI lifeText;
+     public bool pause;
+     public TextMeshProUGUI pauseScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,21 @@ public class GameManager : MonoBehaviour
         }
 
         lifeText.text = "Lives: " + Health;
+
+        //////////////////////////
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            if (pause == true && isGameActive == true)
+            {
+              PausedScreen();
+            }
+            else
+            {
+             ResumeGame();
+            }
+        }
+        
+        
     }
 
     public void RestartGame()
@@ -73,6 +90,20 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
         spawnRate /= difficulty;
         titleScreen.gameObject.SetActive(false);
+    }
+
+    public void PausedScreen()
+    {
+       Time.timeScale = 0f;
+       pause = false;
+       pauseScreen.gameObject.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+      Time.timeScale = 1f;
+       pause = true;
+       pauseScreen.gameObject.SetActive(false);
     }
 
 }
