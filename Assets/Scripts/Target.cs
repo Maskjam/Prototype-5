@@ -17,6 +17,7 @@ public class Target : MonoBehaviour
     
     
     
+    
     void Awake()
     {
         targetRb = GetComponent<Rigidbody>();
@@ -62,7 +63,7 @@ public class Target : MonoBehaviour
         Destroy(gameObject);
         if (!gameObject.CompareTag("Bad")) 
         {
-            gameManager.GameOver();
+            gameManager.Health--;
         }
     }
 }

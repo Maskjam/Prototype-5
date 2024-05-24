@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
      public bool isGameActive;
      public Button restartButton;
      public GameObject titleScreen;
+     public int Health; 
+     public TextMeshProUGUI lifeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Health == 0)
+        {
+            GameOver(); 
+        }
+
+        lifeText.text = "Lives: " + Health;
     }
 
     public void RestartGame()
